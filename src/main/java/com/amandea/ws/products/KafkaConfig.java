@@ -60,6 +60,9 @@ public class KafkaConfig {
         config.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG,deliveryTimeout);
         config.put(ProducerConfig.LINGER_MS_CONFIG,linger);
         config.put(ProducerConfig.RETRY_BACKOFF_MS_CONFIG,requestTimeout);
+        config.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG,true);
+        config.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION,5);
+//        config.put(ProducerConfig.RETRIES_CONFIG,Integer.MAX_VALUE);
         return config;
     }
 
